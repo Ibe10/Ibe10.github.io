@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CV — Muh Ibrahim Al Fath</title>
+<meta name="description" content="Curriculum Vitae of Muh Ibrahim Al Fath — Full-Stack Web Developer (Laravel, Livewire, CodeIgniter)"/>
+<style>
+  :root {
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+    --accent: #0071e3;
+    --line: #e5e5ea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', Arial, sans-serif;
+    color: var(--ink);
+    background: #f5f5f7;
+    line-height: 1.5;
+    font-size: 13px;
+  }
+  .page {
+    max-width: 800px;
+    margin: 24px auto;
+    background: #fff;
+    padding: 44px 52px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border-radius: 12px;
+  }
+
+  /* Toolbar (not printed) */
+  .toolbar {
+    max-width: 800px; margin: 16px auto 0;
+    display: flex; gap: 10px; justify-content: flex-end; align-items: center;
+    padding: 0 4px;
+  }
+  .toolbar a, .toolbar button {
+    font: inherit; font-weight: 600; font-size: 13px;
+    padding: 9px 18px; border-radius: 100px; cursor: pointer;
+    border: 1px solid var(--line); background: #fff; color: var(--ink);
+    text-decoration: none;
+  }
+  .toolbar button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  header.cv-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 18px; border-bottom: 2px solid var(--ink); margin-bottom: 18px;
+  }
+  .cv-name { font-size: 27px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .cv-title { font-size: 13.5px; color: var(--accent); font-weight: 600; margin-top: 4px; }
+  .cv-contact { text-align: right; font-size: 11.5px; color: var(--muted); }
+  .cv-contact div { margin-bottom: 3px; }
+  .cv-contact a { color: var(--ink); text-decoration: none; font-weight: 500; }
+
+  h2.sec {
+    font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent); margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--line);
+  }
+  p.summary { color: var(--ink); }
+
+  .item { margin-bottom: 12px; }
+  .item-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .item-title { font-weight: 700; font-size: 13.5px; }
+  .item-period { font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+  .item-org { font-size: 12px; color: var(--accent); font-weight: 600; margin: 1px 0 3px; }
+  .item ul { margin: 3px 0 0 17px; }
+  .item ul li { margin-bottom: 2px; color: #3a3a3c; }
+
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px 20px; }
+  .skill-line { font-size: 12.5px; }
+  .skill-line b { font-weight: 700; }
+  .skill-line span { color: var(--muted); font-size: 11.5px; }
+
+  .tags { margin-top: 3px; }
+  .tag {
+    display: inline-block; font-size: 10.5px; font-weight: 600; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 100px; padding: 1px 8px; margin: 2px 3px 0 0;
+  }
+
+  .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 20px; }
+  .cert-grid div { font-size: 12.5px; color: #3a3a3c; }
+  .cert-grid div::before { content: "▪ "; color: var(--accent); }
+
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .page { margin: 0; max-width: none; box-shadow: none; border-radius: 0; padding: 20px 30px; }
+    .toolbar { display: none; }
+    a { color: inherit; }
+    .item, .cert-grid { break-inside: avoid; }
+  }
+  @media (max-width: 640px) {
+    .page { padding: 28px 22px; margin: 12px; }
+    header.cv-head { flex-direction: column; gap: 12px; }
+    .cv-contact { text-align: left; }
+    .skills-grid, .cert-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="index.html">← Back to Portfolio</a>
+  <button class="primary" onclick="window.print()">⬇ Download PDF</button>
+</div>
+
+<div class="page">
+
+  <header class="cv-head">
+    <div>
+      <div class="cv-name">Muh Ibrahim Al Fath</div>
+      <div class="cv-title">Full-Stack Web Developer — Laravel · Livewire · CodeIgniter</div>
+    </div>
+    <div class="cv-contact">
+      <div><a href="mailto:ibrahimalfath49@gmail.com">ibrahimalfath49@gmail.com</a></div>
+      <div><a href="https://wa.me/6282199005570">+62 821 9900 5570</a></div>
+      <div>Kalimulya, Cilodong, Depok, West Java, Indonesia</div>
+      <div><a href="https://github.com/Ibe10">github.com/Ibe10</a></div>
+    </div>
+  </header>
+
+  <h2 class="sec">Professional Summary</h2>
+  <p class="summary">
+    Informatics Engineering graduate of Universitas Saintek Muhammadiyah with 4+ years of experience
+    building end-to-end enterprise web systems using Laravel, Livewire, and CodeIgniter 4, currently
+    serving as Project Lead at PT Krishna Sukses Abadi. Experienced across the full development cycle
+    — database design, backend & REST APIs, and interactive UIs — on 15+ real-world projects: a
+    company-wide internal ERP, a nationwide multi-level organization management system, a membership
+    portal with field-level encryption, POS & inventory, and academic systems. Also brings 4 years of
+    IT infrastructure experience (MikroTik networking, exam servers, CCTV) in the education sector.
+  </p>
+
+  <h2 class="sec">Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-line"><b>Backend</b><br/><span>Laravel 11/12, CodeIgniter 4, PHP 8, MySQL, REST API (Sanctum), RBAC, Field Encryption</span></div>
+    <div class="skill-line"><b>Frontend</b><br/><span>Livewire 3/4, Alpine.js, Tailwind CSS, Bootstrap, JavaScript, Chart.js</span></div>
+    <div class="skill-line"><b>Tools & Others</b><br/><span>Git/GitHub, Firebase FCM, Mapbox/Leaflet, QR/NFC, Python, MikroTik, Figma</span></div>
+  </div>
+
+  <h2 class="sec">Work Experience</h2>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Project Lead</div>
+      <div class="item-period">Jan 2026 — Present</div>
+    </div>
+    <div class="item-org">PT Krishna Sukses Abadi</div>
+    <ul>
+      <li>Leading the development of the company's internal systems: HR, performance assessment, payment request, and production modules.</li>
+      <li>Overseeing system design, the team's development workflow, and delivery across modules.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Full-Stack Developer</div>
+      <div class="item-period">Aug 2024 — Dec 2025</div>
+    </div>
+    <div class="item-org">PT Krishna Sukses Abadi</div>
+    <ul>
+      <li>Built the company's internal ERP end-to-end with Laravel & Livewire: procurement, contracts, invoicing, vendors, warehouse, loans, and taxes.</li>
+      <li>Implemented multi-company/branch master data, QR codes, and web push notifications.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Full-Stack Web Developer</div>
+      <div class="item-period">2024 — Present</div>
+    </div>
+    <div class="item-org">Freelance & Project-Based</div>
+    <ul>
+      <li>Built the Sistahid ecosystem end-to-end: a multi-level organization admin system (DPP–DPW–DPD–DPC), a digital member-card portal, a QR/NFC attendance app, and asset management — Laravel, Livewire, Tailwind CSS.</li>
+      <li>Developed REST APIs (Laravel Sanctum) for the mobile app, with automatically generated API documentation.</li>
+      <li>Built a POS & inventory app (IMEI/SN tracking, barcodes, PDF invoices) and a school event management system with RSVP, QR check-in, and Firebase push notifications.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Web Developer</div>
+      <div class="item-period">2022 — 2024</div>
+    </div>
+    <div class="item-org">Sekolah Pemimpin · SMK Multazam · Saintek Muhammadiyah University</div>
+    <ul>
+      <li>Employee Performance Assessment System for Sekolah Pemimpin — performance monitoring with 3 access levels (Admin, Principal, Employee).</li>
+      <li>Student Violation Monitoring System for SMK Multazam — violation records with 4 access levels (Admin, Supervisor, Student, Guardian).</li>
+      <li>Quality Assurance System for Saintek Muhammadiyah University — internal quality assessments with 4 access levels (Admin, QA Agency, Chancellor, Employees).</li>
+      <li>All built with CodeIgniter 4, MythAuth, and Bootstrap.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Deputy Head of Facilities · Head of Computer Lab & Library · School Operator</div>
+      <div class="item-period">2020 — 2024</div>
+    </div>
+    <div class="item-org">MA Hidayatullah Depok</div>
+    <ul>
+      <li>Managed IT infrastructure: computer networks, national exam (ANBK) server configuration, and CCTV installation across 4 buildings.</li>
+      <li>Managed education data applications: EMIS, Simpatika, e-RKAM (budgets & BOS funds), Madrasah Digital Report Cards, and the SLiMS library system.</li>
+      <li>Planned the procurement, development, and budgeting of school facilities.</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">Featured Projects</h2>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Sistahid — Multi-Level Organization Management System</div>
+    </div>
+    <ul>
+      <li>Nationwide mass-organization platform: membership & transfers, management org chart, real-time QR/NFC attendance, halaqah & mentoring reports, member card printing, a Mapbox distribution map, analytics dashboards, multi-role RBAC, and a mobile API.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Livewire 3</span><span class="tag">Sanctum</span><span class="tag">Mapbox</span><span class="tag">Chart.js</span><span class="tag">QR/NFC</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Portal SISTAH — Member Card Claim & Printing</div>
+    </div>
+    <ul>
+      <li>Membership claims by national ID (NIK), step-by-step verification, digital cards, individual/collective printing with a payment flow, WhatsApp magic-link login, and database-level encryption of NIK & phone numbers.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 11</span><span class="tag">Sanctum API</span><span class="tag">WhatsApp Auth</span><span class="tag">jsPDF</span><span class="tag">Field Encryption</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Haflah — School Event Management System</div>
+    </div>
+    <ul>
+      <li>Guest invitations & RSVP, QR check-in with a queue display, Firebase FCM push notifications, plus a multi-unit work-program & budgeting module with approval flows.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Livewire 4</span><span class="tag">Firebase FCM</span><span class="tag">QR Code</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Diilsays — POS & Inventory for Electronics Retail</div>
+    </div>
+    <ul>
+      <li>Per-unit stock tracking (IMEI/SN), barcode label printing, PDF invoices, returns, stock opname, Excel import/export, and a revenue analytics dashboard.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 11</span><span class="tag">Livewire Volt</span><span class="tag">Barcode</span><span class="tag">DomPDF</span><span class="tag">Excel</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Face Recognition Attendance — Mobile & Backend</div>
+    </div>
+    <ul>
+      <li>Campus attendance system: a Flutter app with face verification (OpenCV) and a QR scanner, backed by Python Flask + MySQL with JWT authentication.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Flutter</span><span class="tag">Python Flask</span><span class="tag">OpenCV</span><span class="tag">JWT</span>
+    </div>
+  </div>
+
+  <h2 class="sec">Education</h2>
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Universitas Saintek Muhammadiyah</div>
+      <div class="item-period">2020 — 2024</div>
+    </div>
+    <div class="item-org">Bachelor's degree in Informatics Engineering</div>
+  </div>
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">MA Hidayatullah</div>
+      <div class="item-period">2015 — 2018</div>
+    </div>
+    <div class="item-org">Natural Sciences (IPA)</div>
+  </div>
+
+  <h2 class="sec">Certifications</h2>
+  <div class="cert-grid">
+    <div>Certified Data Scientist (CADS)</div>
+    <div>MikroTik Certified Network Associate (MTCNA)</div>
+    <div>IDN.ID MikroTik Certified</div>
+    <div>Fullstack Development</div>
+    <div>EDM e-RKAM TIM</div>
+  </div>
+
+  <h2 class="sec">Languages</h2>
+  <p>Indonesian (Native) · English (Professional Working Proficiency)</p>
+
+</div>
+
+</body>
+</html>

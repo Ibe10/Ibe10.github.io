@@ -1,0 +1,8 @@
+# Local/editor files
+.claude/
+_preview_tmp.html
+Thumbs.db
+.DS_Store
+
+# Old personal CV (not used by the site)
+assets/CV Ibrahim Fix (2).pdf
