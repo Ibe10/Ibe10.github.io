@@ -1,0 +1,11 @@
+# Block public access to hidden files/folders (.git, .gitignore, etc.)
+RedirectMatch 404 (?i)/\.(?!well-known)
+
+# Basic browser caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType application/pdf "access plus 1 day"
+</IfModule>
