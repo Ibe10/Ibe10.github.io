@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CV — Muh Ibrahim Al Fath</title>
-<meta name="description" content="Curriculum Vitae of Muh Ibrahim Al Fath — Full-Stack Web Developer (Laravel, Livewire, CodeIgniter)"/>
+<meta name="description" content="Curriculum Vitae of Muh Ibrahim Al Fath — Full-Stack Web Developer (Laravel, Livewire, React, Next.js)"/>
 <style>
   :root {
     --ink: #1d1d1f;
@@ -109,7 +109,7 @@
   <header class="cv-head">
     <div>
       <div class="cv-name">Muh Ibrahim Al Fath</div>
-      <div class="cv-title">Full-Stack Web Developer — Laravel · Livewire · CodeIgniter</div>
+      <div class="cv-title">Full-Stack Web Developer — Laravel · Livewire · React · Next.js</div>
     </div>
     <div class="cv-contact">
       <div><a href="mailto:ibrahimalfath49@gmail.com">ibrahimalfath49@gmail.com</a></div>
@@ -122,19 +122,20 @@
   <h2 class="sec">Professional Summary</h2>
   <p class="summary">
     Informatics Engineering graduate of Universitas Saintek Muhammadiyah with 4+ years of experience
-    building end-to-end enterprise web systems using Laravel, Livewire, and CodeIgniter 4, currently
+    building end-to-end enterprise web systems using Laravel, Livewire, React/Next.js, and CodeIgniter 4, currently
     serving as Project Lead at PT Krishna Sukses Abadi. Experienced across the full development cycle
-    — database design, backend & REST APIs, and interactive UIs — on 15+ real-world projects: a
-    company-wide internal ERP, a nationwide multi-level organization management system, a membership
-    portal with field-level encryption, POS & inventory, and academic systems. Also brings 4 years of
+    — database design, backend & REST APIs, and interactive UIs — on 20+ real-world projects: a
+    company-wide internal ERP, a nationwide multi-level organization platform with an offline-first PWA
+    and a face-recognition microservice, a money-changer ERP with automatic accounting and AML compliance,
+    POS & inventory, MikroTik network panels, and academic systems. Also brings 4 years of
     IT infrastructure experience (MikroTik networking, exam servers, CCTV) in the education sector.
   </p>
 
   <h2 class="sec">Technical Skills</h2>
   <div class="skills-grid">
-    <div class="skill-line"><b>Backend</b><br/><span>Laravel 11/12, CodeIgniter 4, PHP 8, MySQL, REST API (Sanctum), RBAC, Field Encryption</span></div>
-    <div class="skill-line"><b>Frontend</b><br/><span>Livewire 3/4, Alpine.js, Tailwind CSS, Bootstrap, JavaScript, Chart.js</span></div>
-    <div class="skill-line"><b>Tools & Others</b><br/><span>Git/GitHub, Firebase FCM, Mapbox/Leaflet, QR/NFC, Python, MikroTik, Figma</span></div>
+    <div class="skill-line"><b>Backend</b><br/><span>Laravel 11/12, CodeIgniter 4, PHP 8, Node.js, Go, MySQL, Prisma, REST API (Sanctum), RBAC, Field Encryption</span></div>
+    <div class="skill-line"><b>Frontend</b><br/><span>Livewire 3/4, Alpine.js, React 19, TypeScript, Next.js 16, Tailwind CSS, PWA (offline, IndexedDB), Chart.js</span></div>
+    <div class="skill-line"><b>Tools & Others</b><br/><span>Git/GitHub, Vitest, Playwright, Firebase FCM, Mapbox, QR/NFC, TensorFlow.js, Python, MikroTik RouterOS, Figma</span></div>
   </div>
 
   <h2 class="sec">Work Experience</h2>
@@ -170,8 +171,10 @@
     </div>
     <div class="item-org">Freelance & Project-Based</div>
     <ul>
-      <li>Built the Sistahid ecosystem end-to-end: a multi-level organization admin system (DPP–DPW–DPD–DPC), a digital member-card portal, a QR/NFC attendance app, and asset management — Laravel, Livewire, Tailwind CSS.</li>
+      <li>Built the Sistahid ecosystem end-to-end: a multi-level organization admin system (DPP–DPW–DPD–DPC), a digital member-card portal, an offline-first React PWA, a Node.js face-recognition service, and asset management.</li>
       <li>Developed REST APIs (Laravel Sanctum) for the mobile app, with automatically generated API documentation.</li>
+      <li>Built a money-changer ERP in Next.js + Prisma with automatic journals, moving-average cost, AML compliance (DTTOT/PEP screening, PPATK drafts), and 33 financial reports.</li>
+      <li>Built an auction-resale back office, a Go bidding engine with rate limiting and a mock test server, and MikroTik network panels for an RT/RW-Net ISP and a school.</li>
       <li>Built a POS & inventory app (IMEI/SN tracking, barcodes, PDF invoices) and a school event management system with RSVP, QR check-in, and Firebase push notifications.</li>
     </ul>
   </div>
@@ -203,17 +206,30 @@
     </ul>
   </div>
 
-  <h2 class="sec">Featured Projects</h2>
+  <h2 class="sec">Projects</h2>
 
   <div class="item">
     <div class="item-head">
       <div class="item-title">Sistahid — Multi-Level Organization Management System</div>
     </div>
     <ul>
-      <li>Nationwide mass-organization platform: membership & transfers, management org chart, real-time QR/NFC attendance, halaqah & mentoring reports, member card printing, a Mapbox distribution map, analytics dashboards, multi-role RBAC, and a mobile API.</li>
+      <li>Nationwide mass-organization platform: membership & transfers, management org chart, QR/NFC and face-recognition attendance kiosks, halaqah & worship-report recaps, member card printing, a PDP-Law personal-data deletion workflow, a Mapbox distribution map, multi-role RBAC, and a 100-endpoint mobile API.</li>
+      <li>Offline-first React PWA for members (encrypted local vault, sync queue, Qur'an & PDF readers, face enrollment with liveness) and a Node.js face-descriptor microservice with HMAC-signed requests and a worker-thread pool.</li>
     </ul>
     <div class="tags">
-      <span class="tag">Laravel 12</span><span class="tag">Livewire 3</span><span class="tag">Sanctum</span><span class="tag">Mapbox</span><span class="tag">Chart.js</span><span class="tag">QR/NFC</span>
+      <span class="tag">Laravel 12</span><span class="tag">Livewire 3</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">TensorFlow.js</span><span class="tag">Mapbox</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">MJC Valas — Money Changer ERP</div>
+    </div>
+    <ul>
+      <li>Single-entry cashier receipts that post journals, moving-average cost, cash & bank books, and financial statements automatically; AML compliance (BI thresholds, DTTOT/PEP screening, PPATK report drafts), period closing, 33 reports, and encrypted customer identities with blind indexes.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Next.js 16</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">MySQL</span><span class="tag">Vitest</span><span class="tag">Playwright</span>
     </div>
   </div>
 
@@ -255,6 +271,114 @@
 
   <div class="item">
     <div class="item-head">
+      <div class="item-title">Auction Resale Back Office</div>
+    </div>
+    <ul>
+      <li>Won bids &amp; item pricing, a per-unit stock ledger, sales &amp; invoices, supplier returns, stock opname, capital and profit-withdrawal tracking per partner, and shareable read-only recap links with data cut-off &amp; expiry; installable as a PWA.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Livewire 3</span><span class="tag">PWA</span><span class="tag">Unit Ledger</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Automated Bidding Engine</div>
+    </div>
+    <ul>
+      <li>Go service with a built-in web panel: per-item price ceilings &amp; bid jumps imported from Excel, timed normal/burst/sniper phases, global rate limiting that honours 429 Retry-After, bounded concurrency, multiple accounts, persisted audit logs, and a mock server for failure-mode testing.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Go</span><span class="tag">Concurrency</span><span class="tag">Rate Limiting</span><span class="tag">Mock Server</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">ERP Procurement — PT Krishna Sukses Abadi</div>
+    </div>
+    <ul>
+      <li>Contract, invoice, vendor, warehouse, loan, and tax management with multi-company/branch master data, QR codes, and web push notifications.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Livewire</span><span class="tag">Web Push</span><span class="tag">QR Code</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Sistah Asset — Organizational Asset Management</div>
+    </div>
+    <ul>
+      <li>Asset records with photos &amp; documents, inter-region transfers with an approval flow, periodic condition logs, and Indonesian region master data down to village level.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Livewire 4</span><span class="tag">Approval Workflow</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Hisat — Corporate Asset Management</div>
+    </div>
+    <ul>
+      <li>Multi-region asset records per business line &amp; location, depreciation, inventory value, periodic reports, audit logs, and role &amp; permission management.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Depreciation</span><span class="tag">Audit Log</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Akbar — Mini ERP</div>
+    </div>
+    <ul>
+      <li>Products &amp; categories, purchasing, sales, income/expense finance, suppliers &amp; customers with bank accounts, activity logs, and data backup.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Jetstream</span><span class="tag">Livewire 3</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Toko — POS App</div>
+    </div>
+    <ul>
+      <li>Retail point of sale: products, sales transactions, suppliers &amp; customers, a dedicated cashier page, and direct invoice printing.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Livewire 4</span><span class="tag">POS</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Ataya — Company Profile &amp; Catalog</div>
+    </div>
+    <ul>
+      <li>Public pages (home, gallery, products, news) and an admin panel for products, categories, news, and taxes, with QR codes and PDF documents.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">CodeIgniter 4</span><span class="tag">DomPDF</span><span class="tag">QR Code</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">MikroTik Network Panels — RT/RW-Net ISP & School</div>
+    </div>
+    <ul>
+      <li>Pull-based RouterOS sync for routers behind CGNAT: per-house/per-room isolation and bandwidth limits, subscriber payments with transfer proofs, ARP-based online detection, bandwidth sampling, and PWA push notifications.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Laravel 12</span><span class="tag">Livewire</span><span class="tag">MikroTik RouterOS</span><span class="tag">Web Push</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
       <div class="item-title">Face Recognition Attendance — Mobile & Backend</div>
     </div>
     <ul>
@@ -262,6 +386,18 @@
     </ul>
     <div class="tags">
       <span class="tag">Flutter</span><span class="tag">Python Flask</span><span class="tag">OpenCV</span><span class="tag">JWT</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <div class="item-title">Academic Systems — Sekolah Pemimpin · SMK Multazam · Saintek Muhammadiyah University</div>
+    </div>
+    <ul>
+      <li>Employee Performance Assessment (3 access levels), Student Violation Monitoring with guardian access (4 levels), and a campus Quality Assurance system (4 levels).</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">CodeIgniter 4</span><span class="tag">MythAuth</span><span class="tag">Bootstrap</span>
     </div>
   </div>
 
