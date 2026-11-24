@@ -80,23 +80,88 @@ const navLinks = document.querySelector(".nav-links");
 mobileBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
 navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
-// --- Contact form (opens the visitor's email client) ---
-const form = document.querySelector(".contact-form-box form");
-if (form) {
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    const name = document.getElementById("fname").value.trim();
-    const email = document.getElementById("femail").value.trim();
-    const subject = document.getElementById("fsubject").value.trim() || "Message from Portfolio";
-    const message = document.getElementById("fmessage").value.trim();
-    const body = `Hello Ibrahim,%0D%0A%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0A— ${encodeURIComponent(name)} (${encodeURIComponent(email)})`;
-    window.location.href = `mailto:ibrahimalfath49@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+// --- Contact: copy email ---
+document.querySelectorAll(".copy-btn").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      btn.textContent = "Copied ✓";
+    } catch {
+      btn.textContent = "Copy failed";
+    }
+    setTimeout(() => { btn.textContent = "Copy"; }, 2000);
+  });
+});
 
-    const btn = form.querySelector(".form-submit");
-    const orig = btn.textContent;
-    btn.textContent = "✅ Opening your email app...";
-    btn.style.background = "#34c759";
-    setTimeout(() => { btn.textContent = orig; btn.style.background = ""; form.reset(); }, 3500);
+// --- Contact form: Web3Forms, with WhatsApp as fallback ---
+const WHATSAPP_NUMBER = "6282199005570";
+const CONTACT_EMAIL = "ibrahimalfath49@gmail.com";
+const form = document.querySelector(".contact-form-box form");
+
+if (form) {
+  const status = form.querySelector(".form-status");
+  const submitBtn = form.querySelector(".form-submit");
+  const field = name => form.elements[name].value.trim();
+
+  const setStatus = (html, kind) => {
+    status.innerHTML = html;
+    status.className = "form-status" + (kind ? " " + kind : "");
+  };
+
+  const openWhatsApp = () => {
+    const name = field("name"), email = field("email");
+    const subject = field("subject"), message = field("message");
+    if (!name || !message) {
+      setStatus("Please fill in your name and message first.", "err");
+      return false;
+    }
+    const intro = email ? `Hello Ibrahim, I'm ${name} (${email}).` : `Hello Ibrahim, I'm ${name}.`;
+    const text = [intro, "", subject, message].filter((line, i) => line || i === 1).join("\n");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    setStatus("Opening WhatsApp with your message…", "ok");
+    return true;
+  };
+
+  form.querySelector(".form-wa").addEventListener("click", openWhatsApp);
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    // Without a Web3Forms key the form still works — through WhatsApp.
+    if (!field("access_key")) { openWhatsApp(); return; }
+
+    if (!form.checkValidity()) {
+      setStatus("Please fill in your name, a valid email, and your message.", "err");
+      return;
+    }
+
+    const original = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+    setStatus("", "");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.message || "Send failed");
+      form.reset();
+      setStatus("✅ Message sent — I'll reply within 1–2 days.", "ok");
+    } catch {
+      // Keep what the visitor typed; offer the other channels.
+      setStatus(
+        `Sorry, the message couldn't be sent. Try <a href="#" data-wa>WhatsApp</a> or email ` +
+        `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`,
+        "err"
+      );
+      status.querySelector("[data-wa]").addEventListener("click", ev => { ev.preventDefault(); openWhatsApp(); });
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = original;
+    }
   });
 }
 
